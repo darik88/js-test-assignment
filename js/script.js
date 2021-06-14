@@ -36,7 +36,7 @@ function showFirstObjectName() {
     }
 
     objects.push(obj1, obj2, obj3)
-    alert(objects[0].name);
+    alert(`Name in the 1st object is ${objects[0].name}`);
 }
 
 
@@ -46,7 +46,7 @@ function superSum(a, b) {
     b = +prompt("Enter the second number:");
 
     if (typeof(a + b) === "number" && !Number.isNaN(a + b)) {
-        alert(`The sum of ${a} and ${b} is ${a + b}ß`);
+        alert(`The sum of ${a} and ${b} is ${a + b}`);
     } else {
         alert("Not a number");
     }
