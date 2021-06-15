@@ -42,15 +42,17 @@ function showFirstObjectName() {
 
 // Задание 6
 function superSum(a, b) {
-    a = +prompt("Enter the first number:");
-    b = +prompt("Enter the second number:");
-
     if (typeof(a + b) === "number" && !Number.isNaN(a + b)) {
         alert(`The sum of ${a} and ${b} is ${a + b}`);
     } else {
         alert("Not a number");
     }
 }
+
+let number1 = +prompt("Enter the first number:");
+let number2 = +prompt("Enter the second number:");
+
+superSum(number1, number2);
 
 
 // Задание 7
@@ -63,17 +65,13 @@ function createArray(numberOfElements) {
 }
 
 function findMinAndMaxInArray(array) {
-    for(let i = 0; i < array.length-1; i++) {
-        for(let j = 0; j < array.length-1-i; j++) {
-            if(array[j] > array[j+1]) {
-                let temp = array[j];
-                array[j] = array[j+1];
-                array[j+1] = temp;
-            }
-        }
-    }
-    console.log(`Minimum in array is ${array[0]}`);
-    console.log(`Maximum in array is ${array[array.length-1]}`);
+
+    let min = Math.min(...array);
+    let max = Math.max(...array);
+
+    console.log(`Min is ${min}`);
+    console.log(`Max is ${max}`);
+
 }
 let array = createArray(5);
 console.log(array);
@@ -98,16 +96,16 @@ function findMaxInArray(array) {
     let max = array[0];
 
     for(let value of array) {
-        if(value > max) {
+        if (value > max) {
             max = value;
         }
     }
-    console.log(`Maximum in array is ${max}`);
+    return(`Maximum in array is ${max}`);
 }
 
 let newArray = createArray(10);
 console.log(newArray);
-findMaxInArray(newArray);
+console.log(findMaxInArray(newArray));
 
 
 /*
