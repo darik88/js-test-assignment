@@ -66,14 +66,25 @@ function createArray(numberOfElements) {
 
 function findMinAndMaxInArray(array) {
 
-    let min = Math.min(...array);
-    let max = Math.max(...array);
+    let min = array[0];
+    let max = array[0];
 
-    console.log(`Min is ${min}`);
-    console.log(`Max is ${max}`);
+    for (let value of array) {
+        if (value < min) {
+            min = value;
+        }
+    }
+    console.log(`Minimum in array is ${min}`);
 
+    for (let value of array) {
+        if (value > max) {
+            max = value;
+        }
+    }
+    console.log(`Maximum in array is ${max}`);
 }
-let array = createArray(5);
+
+let array = createArray(14);
 console.log(array);
 findMinAndMaxInArray(array);
 
